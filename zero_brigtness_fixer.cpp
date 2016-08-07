@@ -26,15 +26,16 @@ static void checkFile(char* filename) {
   FILE* file = fopen (filename, "r+");
   int i = 0;
   int detected = 0;
+  int val = 0;
 
   while (!feof (file))
   {
       fscanf (file, "%d", &i);
-      if (i <= MINIMAL_BRIGHTNESS) detected = 1;
+      if (i <= MINIMAL_BRIGHTNESS) { detected = 1; val = i; }
   }
 
   if (detected) {
-    syslog(LOG_INFO, "Zero brightness detected, writing %d to %s", DEFAULT_BRIGHTNESS, filename);
+    syslog(LOG_INFO, "Too low brightness (%d) detected, writing %d to %s", val, DEFAULT_BRIGHTNESS, filename);
     fprintf(file, "%d", DEFAULT_BRIGHTNESS);
   }
   fclose (file);
