@@ -28,7 +28,7 @@ find /sys/class -name "*brightness*"
 
 ## Run example
 ```
-./zero_brigtness_fixer /sys/class/backlight/intel_backlight/brightness
+./zero_brigtness_fixer /sys/class/backlight/intel_backlight/brightness 10 100
 ```
   
 
