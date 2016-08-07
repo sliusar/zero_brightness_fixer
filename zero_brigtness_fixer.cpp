@@ -60,6 +60,10 @@ main(int argc, char *argv[])
     if (argc >= 3) {
         sscanf(argv[2], "%d", &MINIMAL_BRIGHTNESS);
         if (argc == 4) sscanf(argv[3], "%d", &DEFAULT_BRIGHTNESS);
+        if (DEFAULT_BRIGHTNESS <= MINIMAL_BRIGHTNESS) {
+          cerr << "Warning: default_brightness=" << DEFAULT_BRIGHTNESS << " shout be greater than minimal_brightness=" << MINIMAL_BRIGHTNESS << "! Setting default_brightness=" << MINIMAL_BRIGHTNESS + 1 << endl;
+          DEFAULT_BRIGHTNESS = MINIMAL_BRIGHTNESS + 1; 
+        }
     }
 
     inotifyFd = inotify_init();                 /* Create inotify instance */
