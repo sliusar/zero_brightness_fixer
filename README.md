@@ -30,6 +30,11 @@ find /sys/class -name "*brightness*"
 ```
 So if the brightness will drop below 10 it would be automatically set to 100.
 
+Application should be run as ***root***, or otherwise before it is executed by nonprivileged user please run as root:
+```
+chmod 777 /sys/class/backlight/intel_backlight/brightness
+```
+
 Application sends all output to syslog, to be more exact it sends it wih LOG_USER flag so you can find the logs in /var/log/user.log. Critical errors are sent to stderr and application exits.
   
 
