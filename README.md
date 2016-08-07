@@ -21,7 +21,7 @@ find /sys/class -name "*backlight*"
 ```
 or
 ```
-find /sys/class -name "*brightness*"
+find /sys/devices/ -name "*brightness*"
 ```
 
 ## Run example
