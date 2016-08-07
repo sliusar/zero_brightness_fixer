@@ -9,7 +9,13 @@ The minimal or desired brightness level can be set by changing DEFAULT_BRIGHTNES
 ```bash
 make
 ```
-  
+
+## Usage
+```
+./zero_brigtness_fixer brightness_control_path [minimal_brigthness_level] [desired_minimal_brightness_level]
+```
+where ***minimal_brigthness_level*** - the level of brightness which should be increased to ***desired_minimal_brightness_level***. These two parameters are optional, default values are 0 and 47 respectively.
+
 ## Run
 
 ```bash
