@@ -16,7 +16,7 @@ make
 ```
 where ***minimal_brigthness*** - the level of brightness which should be increased to ***default_brightness***. These two parameters are optional, default values are 0 and 47 respectively; ***pathname*** - path to sysfs file to configure backlight brightness level, usually /sys/class/backlight/intel_backlight/brightness on Intel machines.
 
-Please note that you can have a different file path instead of /sys/class/backlight/intel_backlight/brightness to find your it simply run:
+Please note that you can have a different file path instead of /sys/class/backlight/intel_backlight/brightness to find it on your machine simply run:
 
 ```
 find /sys/class -name "*backlight*"
