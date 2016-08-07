@@ -28,5 +28,7 @@ find /sys/class -name "*brightness*"
 ```
 ./zero_brigtness_fixer /sys/class/backlight/intel_backlight/brightness 10 100
 ```
+So if the brightness will drop below 10 it would be automatically set to 100.
+
   
 
