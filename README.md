@@ -30,5 +30,6 @@ find /sys/class -name "*brightness*"
 ```
 So if the brightness will drop below 10 it would be automatically set to 100.
 
+Application sends all output to syslog, to be more exact is send wih LOG_USER flag so you can find the logs in /var/log/user.log. Critical errors are sent to stderr and application exits.
   
 
