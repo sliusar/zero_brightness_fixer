@@ -18,7 +18,7 @@
 #include <syslog.h>
 
 int DEFAULT_BRIGHTNESS = 47;
-
+int MINIMAL_BRIGHTNESS = 0;
 
 using namespace std;
 
@@ -30,7 +30,7 @@ static void checkFile(char* filename) {
   while (!feof (file))
   {
       fscanf (file, "%d", &i);
-      if (i == 0) detected = 1;
+      if (i <= MINIMAL_BRIGHTNESS) detected = 1;
   }
 
   if (detected) {
@@ -56,7 +56,11 @@ main(int argc, char *argv[])
     ssize_t numRead;
     char *p;
     struct inotify_event *event;
-    if (argc != 2 || strcmp(argv[1], "--help") == 0) { cerr << "Usage:\n\t" << argv[0] << " pathname...\n" << endl; doExit(-1); }
+    if (argc < 2 || argc > 4 || strcmp(argv[1], "--help") == 0) { cerr << "Usage:\n\t" << argv[0] << " pathname [minimal_brightness] [default_brightness]\n" << endl; doExit(-1); }
+    if (argc >= 3) {
+        sscanf(argv[2], "%d", &MINIMAL_BRIGHTNESS);
+        if (argc == 4) sscanf(argv[3], "%d", &DEFAULT_BRIGHTNESS);
+    }
 
     inotifyFd = inotify_init();                 /* Create inotify instance */
     if (inotifyFd == -1) { cerr << "Error: inotify_init failed" << endl; doExit(-2); }
@@ -64,7 +68,8 @@ main(int argc, char *argv[])
     wd = inotify_add_watch(inotifyFd, argv[1], IN_ALL_EVENTS);
     if (wd == -1) { cerr << "Error: inotify_add_watch failed" << endl; doExit(-2); }
 
-    syslog(LOG_INFO, "Watching for brightness changes on %s", argv[1]);
+    syslog(LOG_INFO, "Watching for brightness changes on %s, minimal_brightness=%d, default_brightness=%d", argv[1], MINIMAL_BRIGHTNESS, DEFAULT_BRIGHTNESS);
+    checkFile(argv[1]);
 
     while (1) {                                  /* Read events forever */
         numRead = read(inotifyFd, buf, BUF_LEN);
