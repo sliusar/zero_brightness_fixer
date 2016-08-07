@@ -30,7 +30,7 @@ find /sys/class -name "*brightness*"
 ```
 So if the brightness will drop below 10 it would be automatically set to 100.
 
-Application should be run as ***root***, or otherwise before it is executed by nonprivileged user please run as root:
+Application should be run as ***root***, or otherwise before it is executed by nonprivileged user just run this as root:
 ```
 chmod 777 /sys/class/backlight/intel_backlight/brightness
 ```
