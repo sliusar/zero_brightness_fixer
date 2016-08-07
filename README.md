@@ -5,3 +5,9 @@ Works in Debian Jessie, but will also work with any other Linux (Ubuntu, Centos,
 
 The minimal or desired brightness level can be set by changing DEFAULT_BRIGHTNESS parameter in source code or by setting this value when executed.
 
+Compile:
+  make
+  
+Run:
+  ./zero_brigtness_fixer /sys/class/backlight/intel_backlight/brightness
+
