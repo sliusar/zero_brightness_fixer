@@ -50,7 +50,7 @@ void doExit(int code) {
 int
 main(int argc, char *argv[])
 {
-    openlog("zero_brigtness_fixer", LOG_PID|LOG_CONS, LOG_USER);
+    openlog("zero_brightness_fixer", LOG_PID|LOG_CONS, LOG_USER);
     int inotifyFd, wd;
     char buf[BUF_LEN] __attribute__ ((aligned(8)));
     ssize_t numRead;

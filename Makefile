@@ -1,7 +1,7 @@
 
 
-all: zero_brigtness_fixer.cpp
-	g++ -g -Wall -o zero_brigtness_fixer zero_brigtness_fixer.cpp
+all: zero_brightness_fixer.cpp
+	g++ -g -Wall -o zero_brightness_fixer zero_brightness_fixer.cpp
 
 clean: 
-	$(RM) zero_brigtness_fixer
+	$(RM) zero_brightness_fixer
