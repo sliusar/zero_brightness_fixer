@@ -1,4 +1,4 @@
-# zero_brigthness_fixer
+# zero_brightness_fixer
 The inotify enabled app to fix brightness drop in Linux.
 
 Works in Debian Jessie, but will also work with any other Linux (Ubuntu, Centos, Fedora, Arch) with working acpi brightness control via sysfs.
