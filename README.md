@@ -19,7 +19,7 @@ Application sends all output to syslog wih LOG_USER flag, so you can find the lo
 Make sure to have gcc (g++) installed, e.g. in Debian/Ubuntu run `sudo apt-get install g++` to install it, then perform the following actions:
 
 ```
-git clone https://github.com/nuccy/zero_brightness_fixer.git
+git clone https://github.com/sliusar/zero_brightness_fixer.git
 cd zero_brightness_fixer
 make
 ```
