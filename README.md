@@ -47,3 +47,8 @@ sudo systemctl enable zero_brightness_fixer
 sudo service zero_brightness_fixer start
 ```
 The utilite will then run in the background and will be restarted after Linux startup.
+
+## License
+
+The project is licensed under the MIT License.
+
