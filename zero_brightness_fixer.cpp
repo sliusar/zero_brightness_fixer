@@ -1,7 +1,7 @@
 /*************************************************************************\
 *                                                                        *
-* Author: Nuccy                                                          *
-* Github repo: https://github.com/nuccy/zero_brightness_fixer/           *
+* Author: Vitalii                                                        *
+* Github repo: https://github.com/sliusar/zero_brightness_fixer/         *
 * Create: August, 2016                                                   *
 *                                                                        *                                                                       *
 \*************************************************************************/
