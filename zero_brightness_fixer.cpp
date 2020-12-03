@@ -3,7 +3,7 @@
 * Author: Vitalii                                                        *
 * Github repo: https://github.com/sliusar/zero_brightness_fixer/         *
 * Create: August, 2016                                                   *
-*                                                                        *                                                                       *
+*                                                                        *
 \*************************************************************************/
 
 #include <sys/types.h>
